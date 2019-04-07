@@ -31,6 +31,8 @@ dependencies {
     final mvrx = '1.0.0'
     final recyclerView = '1.0.0'
     final retrofit = '2.5.0'
+    final rxjava = '2.2.0'
+    final timber = '4.7.1'
 
     // Kotlin dependencies
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
@@ -46,6 +48,9 @@ dependencies {
     // Material Design
     implementation "com.google.android.material:material:$material"
 
+    // RxJava
+    implementation "io.reactivex.rxjava2:rxjava:$rxjava"
+
     // MvRx
     implementation "com.airbnb.android:mvrx:$mvrx"
 
@@ -55,7 +60,11 @@ dependencies {
 
     // Retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofit"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit"
     implementation "com.squareup.retrofit2:converter-moshi:$retrofit"
+
+    // Timber
+    implementation "com.jakewharton.timber:timber:$timber"
 
     // Testing dependencies
     testImplementation 'junit:junit:4.12'
