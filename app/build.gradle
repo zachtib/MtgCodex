@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 28
@@ -24,6 +25,7 @@ dependencies {
     final appcompat = '1.0.2'
     final core_ktx = '1.0.1'
     final coroutines = '1.0.0'
+    final dagger = '2.22.1'
     final mvrx = '1.0.0'
     final retrofit = '2.5.0'
 
@@ -38,6 +40,10 @@ dependencies {
 
     // MvRx
     implementation "com.airbnb.android:mvrx:$mvrx"
+
+    // Dagger
+    implementation "com.google.dagger:dagger:$dagger"
+    kapt "com.google.dagger:dagger-compiler:$dagger"
 
     // Retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofit"
