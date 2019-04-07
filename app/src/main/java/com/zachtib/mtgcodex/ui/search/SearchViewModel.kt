@@ -8,6 +8,14 @@ import com.zachtib.mtgcodex.service.CardsService
 
 class SearchViewModel(private val service: CardsService) : BaseViewModel<SearchState>(SearchState()) {
 
+    fun onSearchStringChanged(searchString: String) {
+        service.search(searchString)
+            .map { it.data }
+            .execute {
+                copy(results = it)
+            }
+    }
+
     companion object : MvRxViewModelFactory<SearchViewModel, SearchState> {
         override fun create(viewModelContext: ViewModelContext, state: SearchState): SearchViewModel? {
             val cardsService = viewModelContext.app<MtgCodexApp>().component.cardsService()
